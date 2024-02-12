@@ -1,0 +1,11 @@
+.createBtn{
+    border: none;
+    width: 120px;
+    color: white;
+    background-color: rgb(12, 159, 12);
+    padding: 10px;
+    border-radius: 5px;
+}
+.createBtn:hover{
+    box-shadow: 2px 1px 5px grey;
+}

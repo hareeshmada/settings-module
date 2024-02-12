@@ -1,0 +1,25 @@
+'use client'
+import Image from "next/image";
+import styles from "./page.module.css";
+import { First } from "@/components/first";
+import { Settings } from "@/app/settingsModule/settings";
+import Link from "next/link";
+import MyPage from "@/components/mypage";
+import { Loading } from "@/components/customHooks/loading";
+import { useEffect, useState } from "react";
+import App, { DragAndDrop } from "@/components/dragAndDrop";
+import Example from "@/components/dragAndDrop2";
+
+export default function Home() {
+  return (
+    <div>
+      <div className={styles.settingsbtn}>
+        <Link href="/settingsModule/masters/employee"><div>Settings</div></Link>
+        
+    </div>
+    {/* <MyPage/> */}
+    {/* <Example/> */}
+    {/* <Loading text='Loading Text...'/> */}
+    </div>
+      );
+}
