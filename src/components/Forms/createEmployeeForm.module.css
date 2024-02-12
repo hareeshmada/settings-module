@@ -6,4 +6,8 @@
 .field{
     /* display: inline;
     border: 1px solid black; */
+    width: 300px;
+}
+.errMsg{
+    color: red;
 }

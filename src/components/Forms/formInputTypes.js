@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './formInputTypes.module.css'
 
 export const FormInput = (props) => {
-    const {type,regExp,name,fieldType,options,handleChange,varName,value}=props;
+    const {type,regExp,errMsg,req,name,fieldType,options,handleChange,varName,filledObj1}=props;
     // if(value){
     //     console.log("hha")
     // }
@@ -11,11 +11,12 @@ export const FormInput = (props) => {
         case "normal":
             return (
                 
-                <input type={type} placeholder={name} className={styles.inputField} onChange={handleChange} name={varName} value={value?value:''}></input>
+                <input type={type} placeholder={name} className={styles.inputField} onChange={(event)=>{handleChange(event,regExp,varName,errMsg,req)}} name={varName} value={filledObj1?filledObj1[varName]:''}></input>
             )
         case "select":
+
             return (
-                <select className={styles.inputField} onChange={handleChange} name={varName} value={value?value:''}>
+                <select className={styles.inputField} onChange={(event)=>{handleChange(event,regExp,varName,errMsg,req)}} name={varName} value={filledObj1?filledObj1[varName]:''}>
                     {
                         options.map((item,ind)=>{
                             return <option key={`op_${ind}`} value={item}>{item}</option>

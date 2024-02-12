@@ -6,7 +6,7 @@
     list-style-type: none;
     margin: 5px;
     text-align: center;
-    width: 120px;
+    min-width: 120px;
 }
 
 .navBar li a{

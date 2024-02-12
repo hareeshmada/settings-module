@@ -3,26 +3,22 @@ import React from 'react'
 import styles from './employeeDetails.module.css'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import appStore from '@/store/appStore'
 
 
 export const EmployeeDetails = (props) => {
     const router=useRouter();
     const {data,headers}=props;
     // console.log(data);
-    const configFilled={
-        "filledData":data,
-        "formConfig":headers
-    }
-    console.log(configFilled);
-    const handleEdit=()=>{
-        console.log("edit");
-        console.log(data);
-        // router.push(
-        //     'employee/editemployee',{ filledData: JSON.stringify(data) }
-        //   );
-    }
-    const handleRemove=()=>{
-        console.log("remove");
+    
+    // console.log(configFilled);
+    
+    const handleRemove=(id)=>{
+        console.log("remove",id);
+        appStore.dispatch({
+            type:"REMOVE",
+            payload:id
+        })
     }
   return (
     <div className={styles.detailsContainer}>
@@ -44,6 +40,11 @@ export const EmployeeDetails = (props) => {
             <tbody>
             {
                 data?.map((item,ind)=>{
+                    const configFilled={
+                        "filledData":item,
+                        "formConfig":headers
+                    }
+
                     return(
                         <tr className={styles.tbrow} key={`di${ind}`}>
                             {
@@ -56,7 +57,10 @@ export const EmployeeDetails = (props) => {
                             <td><Link href={{
                                 pathname:'employee/editemployee',
                                 query:{configFilleddata:JSON.stringify(configFilled)}
-                            }}>Edit</Link></td>
+                            }} className={styles.editBtn}>Edit</Link></td>
+                            <td><button className={styles.editBtn} onClick={()=>{
+                                handleRemove(item.empId);
+                            }}>Remove</button></td>
                         </tr>
                     )
                 })
