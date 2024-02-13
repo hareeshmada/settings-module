@@ -27,8 +27,8 @@ export const CreateEmployeeForm = (props) => {
         let exp
         if(req){
             if(regExp){
-                exp=regExp.test(data);
-                console.log(exp);
+                const reconstructedregExp=eval(regExp);
+                exp=reconstructedregExp.test(data);
             }
             if(data=='' || exp!==undefined?!exp:data=='Select' ){
                 seterrBool(false);
@@ -40,7 +40,7 @@ export const CreateEmployeeForm = (props) => {
         }
         else{
             setFld(varName);
-            regExp?seterrBool(regExp.test(data)):seterrBool(true);
+            regExp?seterrBool(eval(regExp).test(data)):seterrBool(true);
         }
     
         

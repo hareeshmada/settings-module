@@ -4,4 +4,5 @@
     padding: 8px;
     border-radius: 5px;
     margin: 5px;
+    -webkit-box-sizing: border-box; 
 }

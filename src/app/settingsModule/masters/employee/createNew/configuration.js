@@ -1,7 +1,7 @@
 export const createEmpFields=[
     {
         "name":"First Name *",
-        "regExp":/^[a-zA-Z]+$/,
+        "regExp":"/^[a-zA-Z]+$/",
         "errMsg":"required and only characters are allowed",
         "type":"text",
         "fieldType":"normal",
@@ -10,7 +10,7 @@ export const createEmpFields=[
     },
     {
         "name":"Middle Name",
-        "regExp":/^[a-zA-Z]+$/,
+        "regExp":"/^[a-zA-Z]+$/",
         "errMsg":"only characters are allowed",
         "type":"text",
         "fieldType":"normal",
@@ -18,7 +18,7 @@ export const createEmpFields=[
     },
     {
         "name":"Last Name *",
-        "regExp":/^[a-zA-Z]+$/,
+        "regExp":"/^[a-zA-Z]+$/",
         "errMsg":"required and only characters are allowed",
         "type":"text",
         "fieldType":"normal",
@@ -45,7 +45,7 @@ export const createEmpFields=[
     },
     {
         "name":"Email *",
-        "regExp":/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+        "regExp":"/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/",
         "errMsg":"it is required and something not right check your mail",
         "type":"email",
         "fieldType":"normal",
@@ -54,7 +54,7 @@ export const createEmpFields=[
     },
     {
         "name":"Mobile Number *",
-        "regExp":/^[0-9]{10}$/,
+        "regExp":"/^[0-9]{10}$/",
         "errMsg":"must be 10 digit and required",
         "type":"number",
         "fieldType":"normal",

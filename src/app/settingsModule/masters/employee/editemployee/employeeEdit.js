@@ -10,12 +10,12 @@ export const EmployeeEdit = () => {
   const configFilled=searchParams.get('configFilleddata');
   // const formConfig=searchParams.get('formConfig');
   // const formConfig1=JSON.parse(formConfig);
-  const configFilled1=JSON.parse(configFilled);
+  const configFilled1=JSON.parse(decodeURIComponent(configFilled));
   const {filledData,formConfig}=configFilled1;
   console.log('oy',filledData,'jdhf',formConfig);
   return (
     <div>
-        <div>EmployeeEdit</div>
+        <h3>Editing Employee Details</h3>
         <CreateEmployeeForm items={formConfig} filledData={filledData} />
     </div>
   )

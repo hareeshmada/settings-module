@@ -44,7 +44,7 @@ export const EmployeeDetails = (props) => {
                         "filledData":item,
                         "formConfig":headers
                     }
-
+                    const configFilleddata=encodeURIComponent(JSON.stringify(configFilled));
                     return(
                         <tr className={styles.tbrow} key={`di${ind}`}>
                             {
@@ -56,7 +56,7 @@ export const EmployeeDetails = (props) => {
                             <td><button className={styles.editBtn} onClick={handleRemove}>Remove</button></td> */}
                             <td><Link href={{
                                 pathname:'employee/editemployee',
-                                query:{configFilleddata:JSON.stringify(configFilled)}
+                                query:{configFilleddata:configFilleddata}
                             }} className={styles.editBtn}>Edit</Link></td>
                             <td><button className={styles.editBtn} onClick={()=>{
                                 handleRemove(item.empId);
