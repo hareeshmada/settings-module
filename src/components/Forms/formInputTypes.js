@@ -11,12 +11,12 @@ export const FormInput = (props) => {
         case "normal":
             return (
                 
-                <input type={type} placeholder={name} className={styles.inputField} onChange={(event)=>{handleChange(event,regExp,varName,errMsg,req)}} name={varName} value={filledObj1?filledObj1[varName]:''}></input>
+                <input type={type} placeholder={name} className={styles.inputField} onChange={(event)=>{handleChange(event,regExp,varName,errMsg,req)}} name={varName} value={filledObj1 && filledObj1[varName] !== undefined?filledObj1[varName]:''} required={req}></input>
             )
         case "select":
 
             return (
-                <select className={styles.inputField} onChange={(event)=>{handleChange(event,regExp,varName,errMsg,req)}} name={varName} value={filledObj1?filledObj1[varName]:''}>
+                <select className={styles.inputField} onChange={(event)=>{handleChange(event,regExp,varName,errMsg,req)}} name={varName} value={filledObj1&& filledObj1[varName] !== undefined ?filledObj1[varName]:''}>
                     {
                         options.map((item,ind)=>{
                             return <option key={`op_${ind}`} value={item}>{item}</option>

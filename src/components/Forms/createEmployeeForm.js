@@ -50,8 +50,7 @@ export const CreateEmployeeForm = (props) => {
 
     const handleSubmit=(eve)=>{
         eve.preventDefault();
-        console.log(formData);
-
+        
         appStore.dispatch({
             type:"FORM_DATA",
             payload:formData
@@ -82,8 +81,8 @@ export const CreateEmployeeForm = (props) => {
             })
         }
         </div>
-        <div style={{textAlign:"center"}}>
-            <button type='submit'>
+        <div style={{textAlign:"center",marginTop:"20px"}}>
+            <button type='submit' className={styles.submitBtn}>
                 Submit
             </button>
         </div>

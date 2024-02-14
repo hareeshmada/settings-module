@@ -3,8 +3,9 @@ import React from 'react'
 import Employee from '../employee'
 import { createEmpFields } from './configuration'
 import { CreateEmployeeForm } from '@/components/Forms/createEmployeeForm'
+import isAuth from '@/components/authentication/isAuth'
 
-export const CreateNew = () => {
+const CreateNew = () => {
   return (
     <div>
         {/* <Employee/> */}
@@ -13,3 +14,4 @@ export const CreateNew = () => {
     </div>
   )
 }
+export default isAuth(CreateNew)

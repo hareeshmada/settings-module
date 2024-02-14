@@ -14,7 +14,8 @@ export const createEmpFields=[
         "errMsg":"only characters are allowed",
         "type":"text",
         "fieldType":"normal",
-        "varName":"mname"
+        "varName":"mname",
+        "req":false
     },
     {
         "name":"Last Name *",
@@ -41,7 +42,8 @@ export const createEmpFields=[
         "type":"",
         "fieldType":"select",
         "options":['Select','Male','Female','Not to disclose'],
-        "varName":"gender"
+        "varName":"gender",
+        "req":false
     },
     {
         "name":"Email *",
