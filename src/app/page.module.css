@@ -1,0 +1,22 @@
+.settingsbtn{
+
+}
+.settingsbtn a{
+  text-decoration: none;
+}
+.settingsbtn div{
+  color: black;
+  width: 120px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 1px 5px grey;
+  text-align: center;
+}
+.settingsbtn div:hover{
+  color: white;
+  width: 120px;
+  background-color: rgb(12, 159, 12);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}

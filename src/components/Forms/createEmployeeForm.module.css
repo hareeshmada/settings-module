@@ -1,0 +1,21 @@
+.fieldCont{
+    display: inline-flex;
+    
+
+}
+.field{
+    /* display: inline;
+    border: 1px solid black; */
+    margin-right: 5px;
+}
+.errMsg{
+    color: red;
+}
+.submitBtn{
+    color: white;
+    background-color: rgb(12, 159, 12);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 1px 5px grey;
+    border: none;
+}

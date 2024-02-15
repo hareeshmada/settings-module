@@ -1,0 +1,31 @@
+.detailsContainer{
+    margin-left: 20px;
+}
+.throw{
+    
+}
+.throw th{
+    /* width: 200px; */
+    padding: 10px;
+    background-color: rgb(148, 194, 148);
+}
+.tbrow td{
+    text-align: center;
+    background-color: lightgray;
+    padding: 5px;
+}
+.editBtn{
+    border: none;
+    padding: 5px;
+    width: 60px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@media only screen and (min-width:800px){
+    .throw th{
+        width: 300px;
+    }
+}
