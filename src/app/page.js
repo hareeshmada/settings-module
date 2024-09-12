@@ -10,11 +10,16 @@ import { useEffect, useState } from "react";
 import App, { DragAndDrop } from "@/components/dragAndDrop";
 import Example from "@/components/dragAndDrop2";
 import { Dashboard } from "@/components/dashboard/dashboard";
+import Linkedlistpractice from "@/components/linkedList";
+import GetProducts from "@/app/servercomp/fakestoreapiresult";
 
 export default function Home() {
-  console.log("hmm")
   return (
+    
     <div>
+      {/* <Linkedlistpractice/> */}
+      {/* <GetProducts/> */}
+      {/*uncomment it to see dashboard */}
       <Dashboard/>
       {/* <div className={styles.settingsbtn}>
         <Link href="/settingsModule/masters/employee"><div>Settings</div></Link>

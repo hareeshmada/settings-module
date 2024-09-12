@@ -14,6 +14,19 @@ const MyPage = () => {
     const handleUp =()=>{
         window.scrollTo({top:0,behavior:"smooth"})
     }
+    const obj = {
+        value: 42,
+        getValue: function() {
+          return this.value;
+        }
+      };
+      
+      const unboundGetValue = obj.getValue;
+    // console.log(unboundGetValue()); // undefined, because 'this' is not bound
+      
+      const boundGetValue = obj.getValue.bind(obj);
+      console.log(boundGetValue()); // 42, because 'this' is bound to 'obj'
+      
     
     return (
       <div>

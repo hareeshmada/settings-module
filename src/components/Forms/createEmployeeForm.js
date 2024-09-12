@@ -4,6 +4,8 @@ import { FormInput } from './formInputTypes';
 import styles from './createEmployeeForm.module.css'
 import appStore from '@/store/appStore';
 import { useRouter } from 'next/navigation';
+import useIsOnline from '../customHooks/useIsOnline';
+import useUserData from '../customHooks/useUserData';
 
 
 export const CreateEmployeeForm = (props) => {
@@ -12,7 +14,9 @@ export const CreateEmployeeForm = (props) => {
     const router=useRouter();
     const [errBool,seterrBool]=useState(true);
     const [fld,setFld]=useState();
-
+    const isOnline= useIsOnline();
+    const {user, updateUser}=useUserData();
+    console.log(user,"da")
     useEffect(()=>{
             if(filledData){
                 
@@ -50,7 +54,7 @@ export const CreateEmployeeForm = (props) => {
 
     const handleSubmit=(eve)=>{
         eve.preventDefault();
-        
+        updateUser({...user,...formData});
         appStore.dispatch({
             type:"FORM_DATA",
             payload:formData
@@ -82,7 +86,7 @@ export const CreateEmployeeForm = (props) => {
         }
         </div>
         <div style={{textAlign:"center",marginTop:"20px"}}>
-            <button type='submit' className={styles.submitBtn}>
+            <button type='submit' className={`${styles.submitBtn} ${!isOnline?styles.offlineBtn:''}`} disabled={!isOnline}>
                 Submit
             </button>
         </div>

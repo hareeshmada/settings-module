@@ -18,4 +18,9 @@
     border-radius: 5px;
     box-shadow: 2px 1px 5px grey;
     border: none;
+    cursor: pointer;
+}
+.offlineBtn{
+    pointer-events: none;
+    background-color: rgb(95, 120, 95);
 }

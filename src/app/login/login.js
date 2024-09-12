@@ -21,6 +21,10 @@ export const Login = () => {
     const handleLogin=()=>{
         const {uname,pwd}=fieldsData;
         if(uname==='hareesh' && pwd ==='hareesh@123'){
+            localStorage.setItem('authToken', 'mocked-jwt-token');
+            const expiry=10*1000;
+            const current=new Date().getTime();
+            localStorage.setItem('authTokenExpiry',current+expiry);
             alert("Logged in successfully!!😊");
             appStore.dispatch({
                 type:"LOGGED",
@@ -52,6 +56,7 @@ export const Login = () => {
             <div className={styles.loginBtn}>
                 <Button handleClick={handleLogin}>Login</Button>
             </div>
+
         </div>
 
     </div>

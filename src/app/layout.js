@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { Provider } from "react-redux";
 import appStore from "@/store/appStore";
+import { UserProvider } from "@/contexts/userDataContext";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -12,9 +13,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body >
-        <Provider store={appStore}>
-        {children}
-        </Provider>
+        <UserProvider>
+          <Provider store={appStore}>
+            {children}
+          </Provider>
+        </UserProvider>
+        
         
       </body>
     </html>

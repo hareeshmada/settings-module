@@ -1,14 +1,35 @@
-.dashItemsCont{
+.dashItemssidenav{
+    list-style-type: none;
+    /* display: flex;
+    justify-content: flex-end; */
+    width: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    margin: 0;
+    height: 100vh;
+    background: rgb(204, 209, 205);
+    z-index: 999;
+}
+.dashItemstopnav{
     list-style-type: none;
     display: flex;
     justify-content: flex-end;
-    
+    position: fixed;
+    width: calc(100% - 130px);
+    top: 0;
+    left: 115px;
+    padding: 10px;
+    padding-top: 10px;
+    margin: 0;
+    background: rgb(204, 209, 205);
 }
-.dashItemsCont li a{
+.dashItemssidenav li a, .dashItemstopnav li a{
     color: white;
     text-decoration: none;
 }
-.dashItemsCont li{
+.dashItemssidenav li, .dashItemstopnav li{
     
     background-color: green;
     margin: 5px;
@@ -27,4 +48,10 @@
     font-size: large;
     font-weight: bold;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.link_style{
+
+}
+.staying{
+    
 }
