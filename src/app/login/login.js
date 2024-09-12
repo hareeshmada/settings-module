@@ -22,7 +22,7 @@ export const Login = () => {
         const {uname,pwd}=fieldsData;
         if(uname==='hareesh' && pwd ==='hareesh@123'){
             localStorage.setItem('authToken', 'mocked-jwt-token');
-            const expiry=10*1000;
+            const expiry=600*1000;
             const current=new Date().getTime();
             localStorage.setItem('authTokenExpiry',current+expiry);
             alert("Logged in successfully!!😊");
