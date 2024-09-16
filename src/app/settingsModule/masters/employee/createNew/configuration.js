@@ -6,7 +6,8 @@ export const createEmpFields=[
         "type":"text",
         "fieldType":"normal",
         "varName":"fname",
-        "req":true
+        "req":true,
+        "refBool":true
     },
     {
         "name":"Middle Name",

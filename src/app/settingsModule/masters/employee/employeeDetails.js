@@ -8,7 +8,6 @@ import { ShimmerTable } from 'react-shimmer-effects'
 
 
 export const EmployeeDetails = (props) => {
-    
     const router=useRouter();
     const {data,headers}=props;
     const [loading, setLoading] = useState(true);
@@ -30,7 +29,7 @@ export const EmployeeDetails = (props) => {
         })
     }
     if(loading){
-        return <ShimmerTable/>
+        return <ShimmerTable row={4} col={4}/>
     }
   return (
     <div className={styles.detailsContainer}>

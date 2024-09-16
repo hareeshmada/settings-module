@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FormInput } from './formInputTypes';
 import styles from './createEmployeeForm.module.css'
 import appStore from '@/store/appStore';
@@ -16,8 +16,10 @@ export const CreateEmployeeForm = (props) => {
     const [fld,setFld]=useState();
     const isOnline= useIsOnline();
     const {user, updateUser}=useUserData();
-    console.log(user,"da")
+    const inputRef=useRef();
     useEffect(()=>{
+    inputRef.current.focus();
+
             if(filledData){
                 
                 setFormData(filledData)
@@ -78,7 +80,7 @@ export const CreateEmployeeForm = (props) => {
                             <div>
                                 {!errBool&& fld==item.varName ?<label className={styles.errMsg}>{item.errMsg}</label>:<label>{item.name}</label>}
                             </div>
-                            <FormInput {...item} handleChange={handleChange} filledObj1={formData} />
+                            <FormInput {...item} handleChange={handleChange} filledObj1={formData} inputRef={inputRef} />
                         </div>
                     </div>
                 )

@@ -1,17 +1,14 @@
 'use client'
-import React from 'react'
+import React, { useRef } from 'react'
 import styles from './formInputTypes.module.css'
 
 export const FormInput = (props) => {
-    const {type,regExp,errMsg,req,name,fieldType,options,handleChange,varName,filledObj1}=props;
-    // if(value){
-    //     console.log("hha")
-    // }
+    const {type,regExp,errMsg,req,name,fieldType,options,handleChange,varName,filledObj1,inputRef,refBool}=props;
     switch(fieldType){
         case "normal":
             return (
                 
-                <input type={type} placeholder={name} className={styles.inputField} onChange={(event)=>{handleChange(event,regExp,varName,errMsg,req)}} name={varName} value={filledObj1 && filledObj1[varName] !== undefined?filledObj1[varName]:''} required={req}></input>
+                <input type={type} placeholder={name} className={styles.inputField} onChange={(event)=>{handleChange(event,regExp,varName,errMsg,req)}} name={varName} value={filledObj1 && filledObj1[varName] !== undefined?filledObj1[varName]:''} required={req} ref={refBool?inputRef:null}></input>
             )
         case "select":
 
