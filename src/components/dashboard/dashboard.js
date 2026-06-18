@@ -25,7 +25,7 @@ export const Dashboard = () => {
             router.push('/login')
         }
     }
-    const token=localStorage.getItem('authToken');
+    const token=typeof window !== 'undefined' ? localStorage.getItem('authToken') : null;
   return (
     <div>
         <ul className={styles.dashItemssidenav}>

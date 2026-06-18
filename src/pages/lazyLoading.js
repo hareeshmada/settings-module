@@ -2,13 +2,13 @@
 import { useSearchParams } from 'next/navigation';
 import React, { Suspense, useState } from 'react'
 // import { CompA } from '../src/components/lazyComps/CompA';
-const CompA = React.lazy(()=> import("../src/components/lazyComps/CompA"));
-const CompB = React.lazy(()=> import('../src/components/lazyComps/CompB'));
+const CompA = React.lazy(()=> import("../components/lazyComps/CompA"));
+const CompB = React.lazy(()=> import('../components/lazyComps/CompB'));
 
 const LazyLoading = () => {
   const searchParams=useSearchParams();
   const person=searchParams.get('person');
-  const person_data=JSON.parse(person);
+  const person_data=person ? JSON.parse(person) : {};
   console.log(person_data);
   const [data,setData]=useState();
   const [checker, setChecker]=useState();

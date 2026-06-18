@@ -10,8 +10,8 @@ const isAuth = (WrappedComponent) => {
     return function Wrapper(props){
         const router=useRouter();
         const isLoggedIn=useSelector(state => state.loginOrLogoutReducer.loggedIn);
-        const token=localStorage.getItem('authToken');
-        const tokenExpiry=localStorage.getItem('authTokenExpiry');
+        const token=typeof window !== 'undefined' ? localStorage.getItem('authToken') : null;
+        const tokenExpiry=typeof window !== 'undefined' ? localStorage.getItem('authTokenExpiry') : null;
         const now = new Date().getTime();
         useEffect(() => {
           if (!token || !tokenExpiry || now >= tokenExpiry) {
